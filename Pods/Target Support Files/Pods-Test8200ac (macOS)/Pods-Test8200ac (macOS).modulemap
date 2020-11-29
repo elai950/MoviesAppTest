@@ -1,0 +1,6 @@
+framework module Pods_Test8200ac__macOS_ {
+  umbrella header "Pods-Test8200ac (macOS)-umbrella.h"
+
+  export *
+  module * { export * }
+}
