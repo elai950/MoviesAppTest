@@ -18,6 +18,7 @@ struct ContentView: View {
     var body: some View {
         
         List(selectedSegment == 0 ? moviesViewModel.popularMovies : moviesViewModel.topratedMovies){ movie in
+            
             NavigationLink(destination: MovieDetails(movie: movie)) {
                 MovieCell(movie: movie)
                     .onAppear {
@@ -91,6 +92,8 @@ struct ImageLoader: View{
     
     let url: URL?
     
+    @State private var isLoading = true
+    
     var body: some View{
         Group{
             if url != nil{
@@ -101,9 +104,29 @@ struct ImageLoader: View{
                     .renderingMode(.original)
                     .resizable()
                     .cancelOnDisappear(true)
+                    .onSuccess(perform: { (imageResult) in
+                        isLoading = false
+                    })
+                    .onFailure(perform: { (error) in
+                        isLoading = false
+                        print(error.localizedDescription)
+                    })
+                    .placeholder({
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(UIColor.systemGray6))
+                            ProgressView()
+                        }
+                    })
             }else{
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(UIColor.systemGray6))
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(UIColor.systemGray5))
+                    Image(systemName: "photo")
+                        .renderingMode(.template)
+                        .imageScale(.large)
+                        .foregroundColor(.white)
+                }
             }
         }
     }
