@@ -22,7 +22,7 @@ struct ContentView: View {
             NavigationLink(destination: MovieDetails(movie: movie)) {
                 MovieCell(movie: movie)
                     .onAppear {
-                        if movie.id == moviesViewModel.popularMovies.last?.id{
+                        if movie.id == moviesViewModel.popularMovies.last?.id || movie.id == moviesViewModel.topratedMovies.last?.id{
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 withAnimation(.spring()){
                                     moviesViewModel.loadMoreMovies(segment: selectedSegment)
@@ -36,7 +36,7 @@ struct ContentView: View {
         .navigationTitle("Movies")
         .toolbar(content: {
             ToolbarItem(placement: .principal, content: {
-                Picker("", selection: $selectedSegment, content: {
+                Picker("", selection: $selectedSegment.animation(.spring()), content: {
                     Text("Popular")
                         .tag(0)
                     Text("Most Rated")
@@ -73,9 +73,11 @@ struct MovieCell: View{
                 VStack(alignment: .leading){
                     Text(movie.title)
                         .font(.headline)
-                    Text(movie.releaseDate)
-                        .foregroundColor(.secondary)
-                        .font(.footnote)
+                    if let date = movie.releaseDate.toDate()?.date{
+                        Text(date, style: .date)
+                            .foregroundColor(.secondary)
+                            .font(.footnote)
+                    }
                 }
                 
                 HStack{

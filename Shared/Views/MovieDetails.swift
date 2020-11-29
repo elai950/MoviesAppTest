@@ -31,14 +31,20 @@ struct MovieDetails: View {
                                     .font(.headline)
                                 Text("Vote Count: \(movie.voteCount)")
                                     .font(.headline)
-                                Text("Release Date: \(movie.releaseDate)")
+                                if let date = movie.releaseDate.toDate()?.date{
+                                    HStack{
+                                        Text("Release Date:")
+                                        Text(date, style: .date)
+                                    }
                                     .font(.headline)
+                                }
+                                
                             }
                         })
                         .groupBoxStyle(RoundedGroupBoxStyle())
                         .padding(.horizontal, 32)
                         
-                        GroupBox(label: Text("Overview:"), content: {
+                        GroupBox(label: Text("Overview:").padding(.bottom,8), content: {
                             Text(movie.overview)
                                 .fixedSize(horizontal: false, vertical: true)
                         })
@@ -48,6 +54,7 @@ struct MovieDetails: View {
                     
                     Spacer()
                 }
+                .padding(.bottom)
             }
             .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
         }

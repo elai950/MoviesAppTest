@@ -8,7 +8,7 @@ target 'Test8200ac (iOS)' do
   use_frameworks!
   pod 'Kingfisher/SwiftUI'
   pod 'Alamofire'
-  pod 'Introspect'
+  pod 'SwiftDate'
   # Pods for Test8200ac (iOS)
 
 end

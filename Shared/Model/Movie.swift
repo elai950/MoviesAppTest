@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 struct Movie: Identifiable, Codable{
     
