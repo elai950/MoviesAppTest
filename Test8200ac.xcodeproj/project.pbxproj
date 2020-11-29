@@ -3,19 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74D40C05370F8370D026890 /* Pods_Test8200ac__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DFDA55757FB54EE28D93A7 /* Pods_Test8200ac__iOS_.framework */; };
+		F0532ED32574142700BD404E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0532ED22574142700BD404E /* SearchBar.swift */; };
+		F0532ED42574142700BD404E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0532ED22574142700BD404E /* SearchBar.swift */; };
+		F0532ED82574145A00BD404E /* SearchMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0532ED72574145A00BD404E /* SearchMovieView.swift */; };
+		F0532ED92574145A00BD404E /* SearchMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0532ED72574145A00BD404E /* SearchMovieView.swift */; };
 		F0A1A8852573F48000E68C10 /* Test8200acApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1A8722573F47900E68C10 /* Test8200acApp.swift */; };
 		F0A1A8862573F48000E68C10 /* Test8200acApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1A8722573F47900E68C10 /* Test8200acApp.swift */; };
 		F0A1A8872573F48000E68C10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1A8732573F47900E68C10 /* ContentView.swift */; };
 		F0A1A8882573F48000E68C10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1A8732573F47900E68C10 /* ContentView.swift */; };
 		F0A1A8892573F48000E68C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A1A8742573F48000E68C10 /* Assets.xcassets */; };
 		F0A1A88A2573F48000E68C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A1A8742573F48000E68C10 /* Assets.xcassets */; };
+		F0A1A89F2573F6F000E68C10 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1A89E2573F6F000E68C10 /* Movie.swift */; };
+		F0A1A8A02573F6F000E68C10 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1A89E2573F6F000E68C10 /* Movie.swift */; };
+		F0A1A8A42573F7A900E68C10 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1A8A32573F7A900E68C10 /* MoviesViewModel.swift */; };
+		F0A1A8A52573F7A900E68C10 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1A8A32573F7A900E68C10 /* MoviesViewModel.swift */; };
+		F0D1EA392574182B000E7BCE /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D1EA382574182B000E7BCE /* MovieDetails.swift */; };
+		F0D1EA3A2574182B000E7BCE /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D1EA382574182B000E7BCE /* MovieDetails.swift */; };
+		F4EDAB2638E8D6594EE3B650 /* Pods_Test8200ac__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FD545237DE0A67FC2D3C3F /* Pods_Test8200ac__macOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34EBB7673BB77E908F983C23 /* Pods-Test8200ac (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test8200ac (macOS).release.xcconfig"; path = "Target Support Files/Pods-Test8200ac (macOS)/Pods-Test8200ac (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		43BAEEC2C5211B0B4F3E71E0 /* Pods-Test8200ac (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test8200ac (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Test8200ac (macOS)/Pods-Test8200ac (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		5C01226DF826DDE1B283D050 /* Pods-Test8200ac (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test8200ac (iOS).release.xcconfig"; path = "Target Support Files/Pods-Test8200ac (iOS)/Pods-Test8200ac (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		5CB0C176801B38F92E2EC44D /* Pods-Test8200ac (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test8200ac (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Test8200ac (iOS)/Pods-Test8200ac (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		B9FD545237DE0A67FC2D3C3F /* Pods_Test8200ac__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test8200ac__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0532ED22574142700BD404E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		F0532ED72574145A00BD404E /* SearchMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieView.swift; sourceTree = "<group>"; };
 		F0A1A8722573F47900E68C10 /* Test8200acApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test8200acApp.swift; sourceTree = "<group>"; };
 		F0A1A8732573F47900E68C10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F0A1A8742573F48000E68C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -24,6 +43,10 @@
 		F0A1A8812573F48000E68C10 /* Test8200ac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test8200ac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A1A8832573F48000E68C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0A1A8842573F48000E68C10 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F0A1A89E2573F6F000E68C10 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F0A1A8A32573F7A900E68C10 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		F0D1EA382574182B000E7BCE /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		F1DFDA55757FB54EE28D93A7 /* Pods_Test8200ac__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test8200ac__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74D40C05370F8370D026890 /* Pods_Test8200ac__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,12 +62,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EDAB2638E8D6594EE3B650 /* Pods_Test8200ac__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B39FB896E0909398B0F5414 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CB0C176801B38F92E2EC44D /* Pods-Test8200ac (iOS).debug.xcconfig */,
+				5C01226DF826DDE1B283D050 /* Pods-Test8200ac (iOS).release.xcconfig */,
+				43BAEEC2C5211B0B4F3E71E0 /* Pods-Test8200ac (macOS).debug.xcconfig */,
+				34EBB7673BB77E908F983C23 /* Pods-Test8200ac (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6A29BF94716E7BBEE287612D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1DFDA55757FB54EE28D93A7 /* Pods_Test8200ac__iOS_.framework */,
+				B9FD545237DE0A67FC2D3C3F /* Pods_Test8200ac__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0532EDC257416A700BD404E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1A8A32573F7A900E68C10 /* MoviesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F0532EDD257416B100BD404E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1A89E2573F6F000E68C10 /* Movie.swift */,
+				F0532ED22574142700BD404E /* SearchBar.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0532EDE257416C100BD404E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1A8732573F47900E68C10 /* ContentView.swift */,
+				F0532ED72574145A00BD404E /* SearchMovieView.swift */,
+				F0D1EA382574182B000E7BCE /* MovieDetails.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F0A1A86C2573F47900E68C10 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +123,8 @@
 				F0A1A87B2573F48000E68C10 /* iOS */,
 				F0A1A8822573F48000E68C10 /* macOS */,
 				F0A1A87A2573F48000E68C10 /* Products */,
+				2B39FB896E0909398B0F5414 /* Pods */,
+				6A29BF94716E7BBEE287612D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				F0A1A8722573F47900E68C10 /* Test8200acApp.swift */,
-				F0A1A8732573F47900E68C10 /* ContentView.swift */,
+				F0532EDE257416C100BD404E /* Views */,
 				F0A1A8742573F48000E68C10 /* Assets.xcassets */,
+				F0532EDD257416B100BD404E /* Model */,
+				F0532EDC257416A700BD404E /* ViewModels */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -97,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0A1A88D2573F48000E68C10 /* Build configuration list for PBXNativeTarget "Test8200ac (iOS)" */;
 			buildPhases = (
+				BE8CEE6BD6CC8BC73161E0B4 /* [CP] Check Pods Manifest.lock */,
 				F0A1A8752573F48000E68C10 /* Sources */,
 				F0A1A8762573F48000E68C10 /* Frameworks */,
 				F0A1A8772573F48000E68C10 /* Resources */,
+				733C579F18427F532C0920D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -114,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0A1A8902573F48000E68C10 /* Build configuration list for PBXNativeTarget "Test8200ac (macOS)" */;
 			buildPhases = (
+				BE41A3A4D846436351314441 /* [CP] Check Pods Manifest.lock */,
 				F0A1A87D2573F48000E68C10 /* Sources */,
 				F0A1A87E2573F48000E68C10 /* Frameworks */,
 				F0A1A87F2573F48000E68C10 /* Resources */,
@@ -144,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F0A1A8702573F47900E68C10 /* Build configuration list for PBXProject "Test8200ac" */;
+			buildConfigurationList = F0A1A8702573F47900E68C10 /* Build configuration list for PBXProject "test8200ac" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -182,13 +261,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		733C579F18427F532C0920D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test8200ac (iOS)/Pods-Test8200ac (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test8200ac (iOS)/Pods-Test8200ac (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test8200ac (iOS)/Pods-Test8200ac (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE41A3A4D846436351314441 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test8200ac (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE8CEE6BD6CC8BC73161E0B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test8200ac (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F0A1A8752573F48000E68C10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F0A1A8872573F48000E68C10 /* ContentView.swift in Sources */,
+				F0D1EA392574182B000E7BCE /* MovieDetails.swift in Sources */,
 				F0A1A8852573F48000E68C10 /* Test8200acApp.swift in Sources */,
+				F0532ED32574142700BD404E /* SearchBar.swift in Sources */,
+				F0A1A89F2573F6F000E68C10 /* Movie.swift in Sources */,
+				F0A1A8A42573F7A900E68C10 /* MoviesViewModel.swift in Sources */,
+				F0532ED82574145A00BD404E /* SearchMovieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +345,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A1A8882573F48000E68C10 /* ContentView.swift in Sources */,
+				F0D1EA3A2574182B000E7BCE /* MovieDetails.swift in Sources */,
 				F0A1A8862573F48000E68C10 /* Test8200acApp.swift in Sources */,
+				F0532ED42574142700BD404E /* SearchBar.swift in Sources */,
+				F0A1A8A02573F6F000E68C10 /* Movie.swift in Sources */,
+				F0A1A8A52573F7A900E68C10 /* MoviesViewModel.swift in Sources */,
+				F0532ED92574145A00BD404E /* SearchMovieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +470,7 @@
 		};
 		F0A1A88E2573F48000E68C10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CB0C176801B38F92E2EC44D /* Pods-Test8200ac (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -339,6 +493,7 @@
 		};
 		F0A1A88F2573F48000E68C10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C01226DF826DDE1B283D050 /* Pods-Test8200ac (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -362,6 +517,7 @@
 		};
 		F0A1A8912573F48000E68C10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43BAEEC2C5211B0B4F3E71E0 /* Pods-Test8200ac (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +542,7 @@
 		};
 		F0A1A8922573F48000E68C10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34EBB7673BB77E908F983C23 /* Pods-Test8200ac (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -411,7 +568,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F0A1A8702573F47900E68C10 /* Build configuration list for PBXProject "Test8200ac" */ = {
+		F0A1A8702573F47900E68C10 /* Build configuration list for PBXProject "test8200ac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0A1A88B2573F48000E68C10 /* Debug */,
