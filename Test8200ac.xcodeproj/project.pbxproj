@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D74D40C05370F8370D026890 /* Pods_Test8200ac__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DFDA55757FB54EE28D93A7 /* Pods_Test8200ac__iOS_.framework */; };
+		F05284EA257446FF005A0F52 /* RoundedGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05284E9257446FF005A0F52 /* RoundedGroupBoxStyle.swift */; };
+		F05284EB257446FF005A0F52 /* RoundedGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05284E9257446FF005A0F52 /* RoundedGroupBoxStyle.swift */; };
 		F0532ED32574142700BD404E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0532ED22574142700BD404E /* SearchBar.swift */; };
 		F0532ED42574142700BD404E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0532ED22574142700BD404E /* SearchBar.swift */; };
 		F0532ED82574145A00BD404E /* SearchMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0532ED72574145A00BD404E /* SearchMovieView.swift */; };
@@ -33,6 +35,7 @@
 		5C01226DF826DDE1B283D050 /* Pods-Test8200ac (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test8200ac (iOS).release.xcconfig"; path = "Target Support Files/Pods-Test8200ac (iOS)/Pods-Test8200ac (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		5CB0C176801B38F92E2EC44D /* Pods-Test8200ac (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test8200ac (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Test8200ac (iOS)/Pods-Test8200ac (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		B9FD545237DE0A67FC2D3C3F /* Pods_Test8200ac__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test8200ac__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F05284E9257446FF005A0F52 /* RoundedGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedGroupBoxStyle.swift; sourceTree = "<group>"; };
 		F0532ED22574142700BD404E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F0532ED72574145A00BD404E /* SearchMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieView.swift; sourceTree = "<group>"; };
 		F0A1A8722573F47900E68C10 /* Test8200acApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test8200acApp.swift; sourceTree = "<group>"; };
@@ -89,6 +92,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F05284EE25744704005A0F52 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F05284E9257446FF005A0F52 /* RoundedGroupBoxStyle.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		F0532EDC257416A700BD404E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +147,7 @@
 				F0A1A8742573F48000E68C10 /* Assets.xcassets */,
 				F0532EDD257416B100BD404E /* Model */,
 				F0532EDC257416A700BD404E /* ViewModels */,
+				F05284EE25744704005A0F52 /* Modifiers */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -335,6 +347,7 @@
 				F0A1A8852573F48000E68C10 /* Test8200acApp.swift in Sources */,
 				F0532ED32574142700BD404E /* SearchBar.swift in Sources */,
 				F0A1A89F2573F6F000E68C10 /* Movie.swift in Sources */,
+				F05284EA257446FF005A0F52 /* RoundedGroupBoxStyle.swift in Sources */,
 				F0A1A8A42573F7A900E68C10 /* MoviesViewModel.swift in Sources */,
 				F0532ED82574145A00BD404E /* SearchMovieView.swift in Sources */,
 			);
@@ -349,6 +362,7 @@
 				F0A1A8862573F48000E68C10 /* Test8200acApp.swift in Sources */,
 				F0532ED42574142700BD404E /* SearchBar.swift in Sources */,
 				F0A1A8A02573F6F000E68C10 /* Movie.swift in Sources */,
+				F05284EB257446FF005A0F52 /* RoundedGroupBoxStyle.swift in Sources */,
 				F0A1A8A52573F7A900E68C10 /* MoviesViewModel.swift in Sources */,
 				F0532ED92574145A00BD404E /* SearchMovieView.swift in Sources */,
 			);

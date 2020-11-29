@@ -16,7 +16,7 @@ struct Movie: Identifiable, Codable{
     var voteCount = 0
     var voteAverage: Double = 0
     var popularity: Double = 0
-    
+    var overview: String
 }
 
 struct MovieList: Codable{
