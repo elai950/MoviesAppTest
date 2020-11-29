@@ -15,10 +15,8 @@ struct MovieDetails: View {
     var body: some View {
         GeometryReader{ geo in
             VStack(alignment: .center, spacing: 8){
-                KFImage(URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"))
-                    .renderingMode(.original)
-                    .resizable()
-                    .frame(width: 300, height: 450,alignment: .center)
+                ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: 300)
+                    .frame(width: 300, height: 450, alignment: .center)
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(20)
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 10)

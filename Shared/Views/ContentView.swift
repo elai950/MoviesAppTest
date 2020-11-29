@@ -63,8 +63,8 @@ struct MovieCell: View{
     
     var body: some View{
         HStack(spacing: 16){
-            ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"))
-                .frame(width: 100, height: 150)
+            ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: 100)
+                .frame(width: 100, height: 100*1.5)
                 .aspectRatio(contentMode: .fill)
                 .cornerRadius(10)
                 .padding(.vertical, 8)
@@ -91,6 +91,7 @@ struct MovieCell: View{
 struct ImageLoader: View{
     
     let url: URL?
+    var size: Double
     
     @State private var isLoading = true
     
@@ -98,9 +99,9 @@ struct ImageLoader: View{
         Group{
             if url != nil{
                 KFImage(url, options: [
-                            .transition(.fade(0.2)),
+                            .transition(.fade(0.5)),
                             .cacheOriginalImage,
-                            .processor(DownsamplingImageProcessor(size: CGSize(width: 100, height: 150)))])
+                            .processor(DownsamplingImageProcessor(size: CGSize(width: size, height: size*1.5)))])
                     .renderingMode(.original)
                     .resizable()
                     .cancelOnDisappear(true)
