@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Introspect
+import struct Kingfisher.DownsamplingImageProcessor
 import struct Kingfisher.KFImage
 
 struct ContentView: View {
@@ -94,9 +94,13 @@ struct ImageLoader: View{
     var body: some View{
         Group{
             if url != nil{
-                KFImage(url)
+                KFImage(url, options: [
+                            .transition(.fade(0.2)),
+                            .cacheOriginalImage,
+                            .processor(DownsamplingImageProcessor(size: CGSize(width: 100, height: 150)))])
                     .renderingMode(.original)
                     .resizable()
+                    .cancelOnDisappear(true)
             }else{
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(UIColor.systemGray6))
