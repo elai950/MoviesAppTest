@@ -16,8 +16,16 @@ struct SearchMovieView: View {
     
     var body: some View {
         VStack {
-            SearchBar(text: $searchText)
+            SearchBar(text: $searchText.animation(.spring()), onCancel: {
+                searchText = ""
+                searchDB.removeAll()
+            })
                 .padding(.horizontal)
+                .onChange(of: searchText) { (output) in
+                    moviesViewModel.searchMovie(searchText: output){ results in
+                        searchDB.append(contentsOf: results)
+                    }
+                }
             List {
                 ForEach(searchDB.filter({
                     self.searchText.isEmpty ? false : $0.title.lowercased().contains(self.searchText.lowercased())
@@ -29,9 +37,6 @@ struct SearchMovieView: View {
             }
             .listStyle(InsetGroupedListStyle())
         }
-        .onAppear(perform: {
-            searchDB = moviesViewModel.popularMovies + moviesViewModel.topratedMovies
-        })
         .navigationTitle("Search")
         .background(Color(UIColor.systemGroupedBackground))
     }

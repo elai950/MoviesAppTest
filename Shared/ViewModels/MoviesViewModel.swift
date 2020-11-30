@@ -12,7 +12,7 @@ final class MoviesViewModel: ObservableObject{
     
     @Published var popularMovies: [Movie] = []
     @Published var topratedMovies: [Movie] = []
-    
+        
     private var db = MovieDB.shared
     
     private let popularMoviesApi = "https://api.themoviedb.org/3/movie/popular?api_key=390640f9df4b7a5213316eb01d83afd7&language=en-US&page=1"
@@ -44,6 +44,10 @@ final class MoviesViewModel: ObservableObject{
                 self.topratedMovies += result
             }
         }
+    }
+    
+    func searchMovie(searchText: String, completion: (([Movie]) -> Void)? = nil){
+        db.searchMovie(searchText: searchText, completion: completion)
     }
 }
 

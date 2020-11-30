@@ -10,22 +10,30 @@ import SwiftUI
 struct SearchBar: UIViewRepresentable {
 
     @Binding var text: String
+    
+    var onCancel: () -> Void
 
     class Coordinator: NSObject, UISearchBarDelegate {
 
         @Binding var text: String
+        var onCancel: () -> ()
 
-        init(text: Binding<String>) {
+        init(text: Binding<String>, onCancel: @escaping () -> ()) {
             _text = text
+            self.onCancel = onCancel
         }
 
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            text = searchText
+            if searchText.isEmpty{
+                self.onCancel()
+            }else{
+                text = searchText
+            }
         }
     }
 
     func makeCoordinator() -> SearchBar.Coordinator {
-        return Coordinator(text: $text)
+        return Coordinator(text: $text, onCancel: onCancel)
     }
 
     func makeUIView(context: UIViewRepresentableContext<SearchBar>) -> UISearchBar {
