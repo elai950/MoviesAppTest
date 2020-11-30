@@ -28,7 +28,6 @@ struct ContentView: View {
                     NavigationLink(destination: MovieDetails(movie: movie)) {
                         PosterCell(movie: movie)
                             .onAppear {
-                                
                                 if movie.id == moviesViewModel.popularMovies.last?.id || movie.id == moviesViewModel.topratedMovies.last?.id{
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                         moviesViewModel.loadMoreMovies(segment: selectedSegment)

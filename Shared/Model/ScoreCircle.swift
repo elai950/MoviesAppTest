@@ -24,7 +24,7 @@ struct ScoreCircle: View {
                 .opacity(0.3)
                 .foregroundColor(progressColor())
                 .padding(size * 0.08)
-                .background(Color.black.opacity(0.85))
+                .background(Color(UIColor.darkGray))
                 .clipShape(Circle())
             
             Circle()
@@ -41,6 +41,7 @@ struct ScoreCircle: View {
         }
         .frame(width: size, height: size, alignment: .center)
         .padding(5)
+        .compositingGroup()
     }
     
     private func progressColor() -> Color{
@@ -50,16 +51,6 @@ struct ScoreCircle: View {
             return Color.orange
         }else{
             return Color.red
-        }
-    }
-}
-
-struct ScoreCircle_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack{
-            ScoreCircle(progress: 0.71, size: 30)
-            ScoreCircle(progress: 0.53, size: 30)
-            ScoreCircle(progress: 0.25, size: 30)
         }
     }
 }

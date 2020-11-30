@@ -14,8 +14,11 @@ struct MovieInfoBox: View {
     var body: some View {
         VStack(spacing: 16){
             
-            ScoreCircle(progress: Float(movie.voteAverage / 10))
-                .compositingGroup()
+            HStack{
+                ScoreCircle(progress: Float(movie.voteAverage / 10))
+                Text("User\nScore")
+                    .font(.headline)
+            }
             
             HStack{
                 CustomLabel(image: "person.3.fill", description: String(format: "%.2f", movie.popularity))
