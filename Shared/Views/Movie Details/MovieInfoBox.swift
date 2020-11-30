@@ -13,21 +13,16 @@ struct MovieInfoBox: View {
     
     var body: some View {
         VStack(spacing: 16){
-            GroupBox(content: {
-                VStack(alignment: .leading, spacing: 16){
+            HStack{
+                CustomLabel(image: "person.3.fill", description: String(format: "%.2f", movie.popularity))
+                
+                CustomLabel(image: "star.fill", description: "\(movie.voteAverage)")
                     
-                    CustomLabel(image: "person.3.fill", description: String(format: "%.2f", movie.popularity))
-                    
-                    CustomLabel(image: "star.fill", description: "\(movie.voteAverage)")
-                    
-                    if let date = movie.releaseDate.toDate()?.date{
-                        CustomLabel(image: "calendar", description: "\(date.toFormat("MM.dd.yy"))")
-                    }
-                    
+                if let date = movie.releaseDate.toDate()?.date{
+                    CustomLabel(image: "calendar", description: "\(date.toFormat("MM.dd.yy"))")
                 }
-            })
-            .groupBoxStyle(RoundedGroupBoxStyle())
-            .padding(.horizontal, 32)
+            }
+            .padding(.horizontal)
             
             GroupBox(label: Text("Overview:").padding(.bottom,8), content: {
                 Text(movie.overview)

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomLabel: View{
     
+    @Environment(\.colorScheme) var colorScheme
+    
     let image: String
     let description: String
     
@@ -21,5 +23,8 @@ struct CustomLabel: View{
                 .foregroundColor(.secondary)
             Text(description)
         }
+        .padding(8)
+        .background(colorScheme == .dark ? Color(UIColor.systemGray5) : Color.white)
+        .cornerRadius(10)
     }
 }

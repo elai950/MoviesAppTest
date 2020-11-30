@@ -12,7 +12,7 @@ struct MovieDetails: View {
     
     let movie: Movie
     
-    @Namespace private var animation
+    @Namespace private var namespace
     @State private var scaleImage = false
     
     var body: some View {
@@ -25,9 +25,9 @@ struct MovieDetails: View {
                             Text("Tap to scale")
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
-
+                            
                             ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: 300)
-                                .matchedGeometryEffect(id: "\(movie.id)", in: animation)
+                                .matchedGeometryEffect(id: "\(movie.id)", in: namespace)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 200, alignment: .center)
                                 .cornerRadius(20)
@@ -41,9 +41,10 @@ struct MovieDetails: View {
                         }
                         .padding(.vertical)
                         
+                        //Details about the movie (overview, votes, etc).
                         MovieInfoBox(movie: movie)
                     }
-                    .padding(.bottom)
+                    .padding(.bottom, 32)
                     
                 }
                 .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
@@ -55,8 +56,9 @@ struct MovieDetails: View {
             
             ZStack{
                 Color.black
+                    .isEmpty(!scaleImage)
                 ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: UIScreen.main.bounds.width.magnitudeSquared)
-                    .matchedGeometryEffect(id: "\(movie.id)", in: animation)
+                    .matchedGeometryEffect(id: "\(movie.id)", in: namespace)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width, alignment: .center)
                     .compositingGroup()
@@ -65,9 +67,9 @@ struct MovieDetails: View {
                             scaleImage.toggle()
                         }
                     })
-
+                    .isEmpty(!scaleImage)
             }
-            .isEmpty(!scaleImage)
+            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }
