@@ -12,11 +12,11 @@ struct ContentView: View {
     @StateObject var moviesViewModel = MoviesViewModel()
     
     @State private var selectedSegment = 0
-    
-    let column = [
-        GridItem(.flexible(minimum: 100, maximum: 200)),
-        GridItem(.flexible(minimum: 100, maximum: 200)),
-        GridItem(.flexible(minimum: 100, maximum: 200))
+
+    private let column = [
+        GridItem(.flexible(minimum: 100, maximum: 200), spacing: 0),
+        GridItem(.flexible(minimum: 100, maximum: 200), spacing: 0),
+        GridItem(.flexible(minimum: 100, maximum: 200), spacing: 0)
     ]
     
     var body: some View {

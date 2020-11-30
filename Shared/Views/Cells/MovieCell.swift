@@ -14,8 +14,8 @@ struct MovieCell: View{
     var body: some View{
         HStack(spacing: 16){
             ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: 100)
-                .frame(width: 100, height: 100*1.5)
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100)
                 .cornerRadius(10)
                 .padding(.vertical, 8)
                 .compositingGroup()
