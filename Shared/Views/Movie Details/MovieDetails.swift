@@ -26,10 +26,10 @@ struct MovieDetails: View {
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
                             
-                            ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: 300)
+                            ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: UIScreen.main.bounds.width.magnitudeSquared)
                                 .matchedGeometryEffect(id: "\(movie.id)", in: namespace)
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 200, alignment: .center)
+                                .frame(width: 250, alignment: .center)
                                 .cornerRadius(20)
                                 .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
                                 .compositingGroup()

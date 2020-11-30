@@ -13,11 +13,13 @@ struct MovieInfoBox: View {
     
     var body: some View {
         VStack(spacing: 16){
+            
+            ScoreCircle(progress: Float(movie.voteAverage / 10))
+                .compositingGroup()
+            
             HStack{
                 CustomLabel(image: "person.3.fill", description: String(format: "%.2f", movie.popularity))
-                
-                CustomLabel(image: "star.fill", description: "\(movie.voteAverage)")
-                    
+                                    
                 if let date = movie.releaseDate.toDate()?.date{
                     CustomLabel(image: "calendar", description: "\(date.toFormat("MM.dd.yy"))")
                 }
