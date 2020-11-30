@@ -14,17 +14,14 @@ struct MovieInfoBox: View {
     var body: some View {
         VStack(spacing: 16){
             GroupBox(content: {
-                VStack(spacing: 16){
-                    Text("Popularity: \(String(format: "%.2f", movie.popularity))")
-                        .font(.headline)
-                    Text("Vote Count: \(movie.voteCount)")
-                        .font(.headline)
+                VStack(alignment: .leading, spacing: 16){
+                    
+                    CustomLabel(image: "person.3.fill", description: String(format: "%.2f", movie.popularity))
+                    
+                    CustomLabel(image: "star.fill", description: "\(movie.voteAverage)")
+                    
                     if let date = movie.releaseDate.toDate()?.date{
-                        HStack{
-                            Text("Release Date:")
-                            Text(date, style: .date)
-                        }
-                        .font(.headline)
+                        CustomLabel(image: "calendar", description: "\(date.toFormat("MM.dd.yy"))")
                     }
                     
                 }
