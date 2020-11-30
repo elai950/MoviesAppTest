@@ -18,9 +18,8 @@ struct PosterCell: View{
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100)
                 .cornerRadius(15)
-                .compositingGroup()
-            ScoreCircle(progress: Float(movie.voteAverage / 10), size: 30)
-                .compositingGroup()
+            ScoreCircle(progress: Float(movie.voteAverage / 10), size: 35)
         }
+        .compositingGroup()
     }
 }

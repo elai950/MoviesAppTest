@@ -14,14 +14,14 @@ struct ContentView: View {
     @State private var selectedSegment = 0
 
     private let column = [
-        GridItem(.flexible(minimum: 100, maximum: 200), spacing: 0),
-        GridItem(.flexible(minimum: 100, maximum: 200), spacing: 0),
-        GridItem(.flexible(minimum: 100, maximum: 200), spacing: 0)
+        GridItem(.flexible(minimum: 75, maximum: 200), spacing: 8),
+        GridItem(.flexible(minimum: 75, maximum: 200), spacing: 8),
+        GridItem(.flexible(minimum: 75, maximum: 200), spacing: 8)
     ]
     
     var body: some View {
         ScrollView{
-            LazyVGrid(columns: column, alignment: .center, spacing: 16, content: {
+            LazyVGrid(columns: column, alignment: .center, spacing: 24, content: {
                 
                 ForEach(selectedSegment == 0 ? moviesViewModel.popularMovies : moviesViewModel.topratedMovies){ movie in
                     
@@ -47,7 +47,7 @@ struct ContentView: View {
                 .isEmpty(moviesViewModel.isFetching)
                 
             })
-            .padding(.top)
+            .padding([.top, .horizontal])
         }
         .padding(.bottom, 32)
         .background(Color(UIColor.systemGroupedBackground))
