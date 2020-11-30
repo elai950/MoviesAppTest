@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import struct Kingfisher.DownsamplingImageProcessor
-import struct Kingfisher.KFImage
 
 struct ContentView: View {
     
@@ -15,24 +13,45 @@ struct ContentView: View {
     
     @State private var selectedSegment = 0
     
+    let column = [
+        GridItem(.flexible(minimum: 100, maximum: 200)),
+        GridItem(.flexible(minimum: 100, maximum: 200)),
+        GridItem(.flexible(minimum: 100, maximum: 200))
+    ]
+    
     var body: some View {
-        
-        List(selectedSegment == 0 ? moviesViewModel.popularMovies : moviesViewModel.topratedMovies){ movie in
-            
-            NavigationLink(destination: MovieDetails(movie: movie)) {
-                MovieCell(movie: movie)
-                    .onAppear {
-                        if movie.id == moviesViewModel.popularMovies.last?.id || movie.id == moviesViewModel.topratedMovies.last?.id{
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                withAnimation(.spring()){
-                                    moviesViewModel.loadMoreMovies(segment: selectedSegment)
+        ScrollView{
+            LazyVGrid(columns: column, alignment: .center, spacing: 16, content: {
+                
+                ForEach(selectedSegment == 0 ? moviesViewModel.popularMovies : moviesViewModel.topratedMovies){ movie in
+                    
+                    NavigationLink(destination: MovieDetails(movie: movie)) {
+                        PosterCell(movie: movie)
+                            .onAppear {
+                                
+                                if movie.id == moviesViewModel.popularMovies.last?.id || movie.id == moviesViewModel.topratedMovies.last?.id{
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                        moviesViewModel.loadMoreMovies(segment: selectedSegment)
+                                    }
                                 }
                             }
-                        }
                     }
-            }
+                }
+                
+                VStack(spacing: 16){
+                    ProgressView()
+                    Text("Load more")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                .isEmpty(moviesViewModel.isFetching)
+                
+            })
+            .padding(.top)
         }
-        .listStyle(InsetGroupedListStyle())
+        .padding(.bottom, 32)
+        .background(Color(UIColor.systemGroupedBackground))
+        .edgesIgnoringSafeArea(.bottom)
         .navigationTitle("Movies")
         .toolbar(content: {
             ToolbarItem(placement: .principal, content: {
@@ -54,89 +73,5 @@ struct ContentView: View {
                 })
             })
         })
-    }
-}
-
-struct MovieCell: View{
-    
-    let movie: Movie
-    
-    var body: some View{
-        HStack(spacing: 16){
-            ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: 100)
-                .frame(width: 100, height: 100*1.5)
-                .aspectRatio(contentMode: .fill)
-                .cornerRadius(10)
-                .padding(.vertical, 8)
-                .compositingGroup()
-            VStack(alignment: .leading, spacing: 8){
-                VStack(alignment: .leading){
-                    Text(movie.title)
-                        .font(.headline)
-                    if let date = movie.releaseDate.toDate()?.date{
-                        Text(date, style: .date)
-                            .foregroundColor(.secondary)
-                            .font(.footnote)
-                    }
-                }
-                
-                HStack{
-                    Text("Vote average:")
-                    Text(String(format: "%.1f", movie.voteAverage))
-                }
-                .font(.subheadline)
-            }
-        }
-    }
-}
-
-struct ImageLoader: View{
-    
-    let url: URL?
-    var size: Double
-    
-    @State private var isLoading = true
-    
-    var body: some View{
-        Group{
-            if url != nil{
-                KFImage(url, options: [
-                            .transition(.fade(0.5)),
-                            .cacheOriginalImage,
-                            .processor(DownsamplingImageProcessor(size: CGSize(width: size, height: size*1.5)))])
-                    .renderingMode(.original)
-                    .resizable()
-                    .cancelOnDisappear(true)
-                    .onSuccess(perform: { (imageResult) in
-                        isLoading = false
-                    })
-                    .onFailure(perform: { (error) in
-                        isLoading = false
-                        print(error.localizedDescription)
-                    })
-                    .placeholder({
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color(UIColor.systemGray6))
-                            ProgressView()
-                        }
-                    })
-            }else{
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(UIColor.systemGray5))
-                    Image(systemName: "photo")
-                        .renderingMode(.template)
-                        .imageScale(.large)
-                        .foregroundColor(.white)
-                }
-            }
-        }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
