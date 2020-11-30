@@ -17,6 +17,10 @@ final class MovieDB{
     var popularMoviesPage = 1
     var topratedMoviesPage = 1
     
+    /// Request movies list from api
+    /// - Parameters:
+    ///   - api: API
+    ///   - completion: Return [Movie]
     final func getMovies(api: String, completion: (([Movie]) -> Void)? = nil){
         
         AF.request(api).responseJSON { (data) in
@@ -39,7 +43,11 @@ final class MovieDB{
         
     }
     
-    func searchMovie(searchText: String, completion: (([Movie]) -> Void)? = nil){
+    /// Request query from api using search text
+    /// - Parameters:
+    ///   - searchText: Query text
+    ///   - completion: Return [Movie]
+    final func searchMovie(searchText: String, completion: (([Movie]) -> Void)? = nil){
         let api = "https://api.themoviedb.org/3/search/movie?api_key=390640f9df4b7a5213316eb01d83afd7&language=en-US&query=\(searchText)"
         
         AF.request(api).responseJSON { (response) in

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+///Custom Label displaying system image with description
+///Image frame: 30
 struct CustomLabel: View{
     
     @Environment(\.colorScheme) var colorScheme

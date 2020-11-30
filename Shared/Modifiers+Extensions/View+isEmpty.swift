@@ -23,6 +23,7 @@ struct EmptyModifier: ViewModifier {
 }
 
 extension View{
+    /// Returns Empty View if true
     func isEmpty(_ bool: Bool) -> some View {
         modifier(EmptyModifier(isEmpty: bool))
     }

@@ -9,6 +9,8 @@ import SwiftUI
 import struct Kingfisher.DownsamplingImageProcessor
 import struct Kingfisher.KFImage
 
+
+/// Loading image from URL
 struct ImageLoader: View{
     
     let url: URL?

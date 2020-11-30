@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Score circle display the progress using percent.
 struct ScoreCircle: View {
     
     var progress: Float
