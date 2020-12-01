@@ -20,38 +20,38 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        ScrollView{
-            LazyVGrid(columns: column, alignment: .center, spacing: 24, content: {
-                
-                ForEach(selectedSegment == 0 ? moviesViewModel.popularMovies : moviesViewModel.topratedMovies){ movie in
-                    
-                    NavigationLink(destination: MovieDetails(movie: movie)) {
-                        PosterCell(movie: movie)
-                            .onAppear {
-                                if movie.id == moviesViewModel.popularMovies.last?.id || movie.id == moviesViewModel.topratedMovies.last?.id{
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                        moviesViewModel.loadMoreMovies(segment: selectedSegment)
-                                    }
-                                }
-                            }
-                    }
+        
+        ZStack{
+            VStack(spacing: 16){
+                Spacer(minLength: 40)
+                HStack{
+                    Text("Movies")
+                        .bold()
+                        .font(.system(.largeTitle, design: .rounded))
+                    Spacer()
+                    NavigationLink(destination: SearchMovieView(moviesViewModel: moviesViewModel), label: {
+                        Circle()
+                            .fill(Color.white)
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .overlay(
+                                Image(systemName: "magnifyingglass")
+                                    .renderingMode(.template)
+                                    .imageScale(.medium)
+                            )
+                            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0.0, y: 5)
+                    })
                 }
+                .padding(.horizontal)
                 
-                VStack(spacing: 16){
-                    ProgressView()
-                    Text("Load more")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                .isEmpty(moviesViewModel.isFetching)
+                ScrollAnimation(title: "Popular", movies: moviesViewModel.popularMovies)
                 
-            })
-            .padding([.top, .horizontal])
+                ScrollAnimation(title: "Top Rated", movies: moviesViewModel.topratedMovies)
+            }
         }
-        .padding(.bottom, 32)
         .background(Color(UIColor.systemGroupedBackground))
-        .edgesIgnoringSafeArea(.bottom)
+        .edgesIgnoringSafeArea(.vertical)
         .navigationTitle("Movies")
+        .navigationBarHidden(true)
         .toolbar(content: {
             ToolbarItem(placement: .principal, content: {
                 Picker("", selection: $selectedSegment.animation(.spring()), content: {

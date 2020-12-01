@@ -23,3 +23,19 @@ struct PosterCell: View{
         }
     }
 }
+
+struct PosterCellLarge: View{
+        
+    let movie: Movie
+    @Namespace private var animation
+
+    var body: some View{
+        ZStack(alignment: .bottomLeading){
+            ImageLoader(url: URL(string: "https://image.tmdb.org/t/p/w500/\(movie.posterPath ?? "")"), size: 200)
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(15)
+                .compositingGroup()
+            ScoreCircle(progress: Float(movie.voteAverage / 10), size: 50)
+        }
+    }
+}
