@@ -11,14 +11,6 @@ struct ContentView: View {
     
     @StateObject var moviesViewModel = MoviesViewModel()
     
-    @State private var selectedSegment = 0
-
-    private let column = [
-        GridItem(.flexible(minimum: 75, maximum: 200), spacing: 8),
-        GridItem(.flexible(minimum: 75, maximum: 200), spacing: 8),
-        GridItem(.flexible(minimum: 75, maximum: 200), spacing: 8)
-    ]
-    
     var body: some View {
         
         ZStack{
@@ -52,25 +44,5 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.vertical)
         .navigationTitle("Movies")
         .navigationBarHidden(true)
-        .toolbar(content: {
-            ToolbarItem(placement: .principal, content: {
-                Picker("", selection: $selectedSegment.animation(.spring()), content: {
-                    Text("Popular")
-                        .tag(0)
-                    Text("Most Rated")
-                        .tag(1)
-                })
-                .labelsHidden()
-            })
-            
-            ToolbarItem(placement: .navigationBarTrailing, content: {
-                NavigationLink(destination: SearchMovieView(moviesViewModel: moviesViewModel), label: {
-                    Image(systemName: "magnifyingglass")
-                        .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 25)
-                })
-            })
-        })
     }
 }
